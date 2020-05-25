@@ -1,0 +1,36 @@
+{  
+    "name": "tf/php-terraform",
+    "description": "php wrapper for basic terraform commands",
+    "keywords": ["php", "terraform"],
+    "homepage": "https://github.com/fernandokbs/php-terraform",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Fernando Garcia",
+        "email": "fernando93d@gmail.com"
+      }
+    ],
+    "require": {
+        "symfony/process": "^5.0"
+    },
+    
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Tf\\" : "Tf/"
+        }
+    },
+
+    "autoload-dev": {
+        "Tf\\" : "Tests"
+    },
+
+
+    "scripts": {
+        "test": "vendor/bin/phpunit --configuration phpunit.xml.dist"
+    }
+}

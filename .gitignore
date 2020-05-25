@@ -1,0 +1,11 @@
+vendor
+tmp
+composer.lock
+command.php
+.terraform
+terraform.tfstate
+terraform.tfstate.backup
+
+./tests/__snapshots__/.terraform
+./tests/__snapshots__/terraform.tfstate
+./tests/__snapshots__/terraform.tfstate.backup
