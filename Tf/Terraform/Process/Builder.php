@@ -8,15 +8,24 @@ class Builder implements BuilderInterface
 {
     private $directory;
 
+    private $timeout;
+
     public function __construct($directory)
     {
         $this->directory = $directory;
         $this->arguments = [];
+        $this->timeout = 3600;
     }
 
     public function setArguments($arguments): BuilderInterface
     {
         $this->arguments = $arguments;
+        return $this;
+    }
+
+    public function setTimeout($timeout): BuilderInterface
+    {
+        $this->timeout = $timeout;
         return $this;
     }
 
@@ -32,6 +41,7 @@ class Builder implements BuilderInterface
 
     public function getProcess(): Process
     {
-        return Process::fromShellCommandline($this->prepareCommand());
+        return Process::fromShellCommandline($this->prepareCommand())
+                ->setTimeout($this->timeout);
     }
 }

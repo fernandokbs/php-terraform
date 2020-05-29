@@ -66,7 +66,7 @@ abstract class AbstractTerraformCommand
 
     public function prepareCommand(): array
     {
-        return array_merge($this->getCommands(), $this->getOptions(), $this->getVars());
+        return (array_filter(array_merge($this->getCommands(), $this->getOptions(), $this->getVars())));
     }
 
     public function runProcess($callback = null)
@@ -77,6 +77,7 @@ abstract class AbstractTerraformCommand
             )
             ->getProcess();
         
+        $process->setTimeout(3600);
         $result = $process->run($callback);
 
         if(is_null($callback)) {

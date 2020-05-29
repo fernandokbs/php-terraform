@@ -2,8 +2,8 @@
 
 use Symfony\Component\Process\Process;
 use PHPUnit\Framework\TestCase;
-use Tf\Exceptions\ExecutionException;
-use Tf\Terraform;
+use Tf\Terraform\Exceptions\ExecutionException;
+use Tf\Terraform\Terraform;
 
 class TeraformTest extends TestCase 
 {
